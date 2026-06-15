@@ -15,7 +15,7 @@ export default function Hero() {
     <section
       id="top"
       aria-label="Introduction"
-      className="relative mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-site flex-col px-4 pt-6 pb-24 sm:px-6 sm:pt-8"
+      className="relative mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-site scroll-mt-24 flex-col px-4 pt-6 pb-24 sm:px-6 sm:pt-8"
     >
       <div className="relative">
         {/* main "About" window — full Container width, consistent with the other section windows */}
