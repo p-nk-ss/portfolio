@@ -55,6 +55,12 @@ export const IconMail = ({ className }: P) =>
 export const IconFile = ({ className }: P) =>
   svg(className, <><path d="M6 3h8l4 4v14H6z" /><path d="M14 3v4h4" /></>);
 
+export const IconChevronDown = ({ className }: P) =>
+  svg(className, <path d="M6 9l6 6 6-6" />);
+
+export const IconMenu = ({ className }: P) =>
+  svg(className, <><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></>);
+
 export const IconDownload = ({ className }: P) =>
   svg(
     className,

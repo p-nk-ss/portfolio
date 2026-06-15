@@ -5,7 +5,7 @@ import { about } from "@/content/site";
 
 export default function About() {
   return (
-    <Section id="about" label="About">
+    <Section id="about" label="About" tight>
       <Container>
         <Window title={about.windowTitle}>
           <h2 className="font-display text-2xl font-semibold tracking-tight">

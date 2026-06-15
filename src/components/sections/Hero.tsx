@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import EcgTrace from "@/components/desktop/EcgTrace";
-import { IconFile, IconMail } from "@/components/desktop/icons";
+import { IconFile, IconMail, IconChevronDown } from "@/components/desktop/icons";
 import { hero } from "@/content/site";
 
 const chipAccent = {
@@ -15,7 +15,7 @@ export default function Hero() {
     <section
       id="top"
       aria-label="Introduction"
-      className="relative mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-site flex-col justify-center px-4 py-10 sm:px-6"
+      className="relative mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-site flex-col px-4 pt-6 pb-24 sm:px-6 sm:pt-8"
     >
       <div className="relative">
         {/* main "About" window — full Container width, consistent with the other section windows */}
@@ -133,6 +133,15 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <a
+        href="#about"
+        aria-label="Scroll to About section"
+        className="anim-pop mt-auto hidden flex-col items-center gap-1 self-center pt-12 text-subtext0 transition-colors hover:text-text sm:flex"
+      >
+        <span className="font-mono text-[11px] tracking-wide">scroll</span>
+        <IconChevronDown className="size-4 motion-safe:animate-bounce" />
+      </a>
     </section>
   );
 }
