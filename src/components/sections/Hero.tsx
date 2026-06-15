@@ -46,62 +46,85 @@ export default function Hero() {
               <span className="ml-1 inline-block h-[15px] w-2 -translate-y-px bg-green align-middle motion-safe:animate-[blink_1.1s_steps(1)_infinite]" aria-hidden="true" />
             </p>
 
-            <div className="flex items-center gap-5">
-              {/* avatar — monogram fallback until a headshot is provided in public/ */}
-              <div
-                className="relative z-10 flex size-[70px] flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-mauve to-blue font-display text-3xl font-bold text-crust"
-                aria-hidden="true"
-              >
-                {hero.monogram}
-              </div>
+            {/* two columns: identity (left) + neofetch-style summary (right) */}
+            <div className="grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
               <div>
-                {/* ECG woven behind the name only — the medicine→engineering motif */}
-                <span className="relative inline-block">
-                  <EcgTrace
-                    className="pointer-events-none absolute left-1/2 top-1/2 h-[64px] w-[calc(100%+28px)] -translate-x-1/2 -translate-y-1/2"
-                    width={360}
-                    period={108}
-                  />
-                  <h1 className="relative font-display text-[clamp(34px,6vw,50px)] font-bold leading-none tracking-tight">
-                    {hero.name}
-                  </h1>
-                </span>
-                <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium">
-                  <span className="font-semibold text-mauve">{hero.role}</span>
+                <div className="flex items-center gap-5">
+                  {/* avatar — monogram fallback until a headshot is provided in public/ */}
+                  <div
+                    className="relative z-10 flex size-[70px] flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-mauve to-blue font-display text-3xl font-bold text-crust"
+                    aria-hidden="true"
+                  >
+                    {hero.monogram}
+                  </div>
+                  <div>
+                    {/* ECG woven behind the name only — the medicine→engineering motif */}
+                    <span className="relative inline-block">
+                      <EcgTrace
+                        className="pointer-events-none absolute left-1/2 top-1/2 h-[64px] w-[calc(100%+28px)] -translate-x-1/2 -translate-y-1/2"
+                        width={360}
+                        period={108}
+                      />
+                      <h1 className="relative font-display text-[clamp(34px,6vw,50px)] font-bold leading-none tracking-tight">
+                        {hero.name}
+                      </h1>
+                    </span>
+                    <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium">
+                      <span className="font-semibold text-mauve">{hero.role}</span>
+                    </p>
+                    <p className="mt-1.5 font-mono text-[11.5px] text-overlay">
+                      <span className="text-red" aria-hidden="true">
+                        &#9829;
+                      </span>{" "}
+                      {hero.monitor.bpm} bpm · {hero.monitor.uptime}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="mt-5 max-w-[46ch] font-display text-lg text-text">
+                  {hero.tagline}
                 </p>
-                <p className="mt-1.5 font-mono text-[11.5px] text-overlay">
-                  <span className="text-red" aria-hidden="true">
-                    &#9829;
-                  </span>{" "}
-                  {hero.monitor.bpm} bpm · {hero.monitor.uptime}
+                <p className="mt-2 max-w-[52ch] text-[15px] leading-relaxed text-subtext1">
+                  {hero.subline}
                 </p>
+
+                <div className="mt-5 flex flex-wrap gap-2.5">
+                  {hero.chips.map((c) => (
+                    <Tag key={c.label} accent={chipAccent[c.accent]}>
+                      {c.label}
+                    </Tag>
+                  ))}
+                </div>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Button href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                    <IconFile className="size-4" />
+                    Open CV.pdf
+                  </Button>
+                  <Button href="#contact" variant="ghost">
+                    <IconMail className="size-4" />
+                    Get in touch
+                  </Button>
+                </div>
               </div>
-            </div>
 
-            <p className="mt-5 max-w-[46ch] font-display text-lg text-text">
-              {hero.tagline}
-            </p>
-            <p className="mt-2 max-w-[52ch] text-[15px] leading-relaxed text-subtext0">
-              {hero.subline}
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {hero.chips.map((c) => (
-                <Tag key={c.label} accent={chipAccent[c.accent]}>
-                  {c.label}
-                </Tag>
-              ))}
-            </div>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                <IconFile className="size-4" />
-                Open CV.pdf
-              </Button>
-              <Button href="#contact" variant="ghost">
-                <IconMail className="size-4" />
-                Get in touch
-              </Button>
+              {/* right column — neofetch-style system summary */}
+              <div className="hidden self-stretch rounded-card border border-white/[0.07] bg-base/40 p-5 md:block">
+                <p className="font-mono text-[13px]">
+                  <span className="text-blue">pankaz</span>
+                  <span className="text-overlay">@</span>
+                  <span className="text-blue">portfolio</span>
+                </p>
+                <div className="my-2.5 h-px bg-white/10" />
+                <dl className="space-y-1.5 font-mono text-[12.5px] leading-relaxed">
+                  {hero.info.map((row) => (
+                    <div key={row.k} className="flex gap-3">
+                      <dt className="w-[74px] flex-none text-mauve">{row.k}</dt>
+                      <dd className="text-subtext1">{row.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
           </div>
         </div>

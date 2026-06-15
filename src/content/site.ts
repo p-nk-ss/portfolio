@@ -22,6 +22,17 @@ export const hero = {
     bpm: 72,
     uptime: "uptime: since med school",
   },
+  // neofetch-style summary shown in the right column of the hero window
+  info: [
+    { k: "role", v: "QA Automation Engineer" },
+    { k: "focus", v: "UI · API · mobile · performance" },
+    { k: "stack", v: "Python · Pytest · Playwright · Appium" },
+    { k: "ci_cd", v: "GitHub Actions · Azure DevOps · Docker" },
+    { k: "coverage", v: "80%+ critical paths automated" },
+    { k: "location", v: "Kyiv, UA · remote / hybrid" },
+    { k: "langs", v: "Ukrainian (native) · English (B2)" },
+    { k: "uptime", v: "since med school" },
+  ] as const,
 };
 
 export const about = {
