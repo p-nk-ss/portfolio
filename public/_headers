@@ -1,0 +1,15 @@
+# Cloudflare Pages / Workers Static Assets header rules.
+# Next's metadata image routes export as extension-less files; set their
+# content-type explicitly so social scrapers and browsers treat them as images.
+/icon
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+/apple-icon
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+/twitter-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400

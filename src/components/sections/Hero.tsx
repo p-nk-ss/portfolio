@@ -40,7 +40,7 @@ export default function Hero() {
 
           {/* body */}
           <div className="p-7 sm:p-9">
-            <p className="mb-5 font-mono text-[13px] tracking-wide text-overlay">
+            <p className="mb-5 font-mono text-[13px] tracking-wide text-subtext0">
               ~/pankaz <span className="font-bold text-green">&#10095;</span>{" "}
               {hero.prompt}
               <span className="ml-1 inline-block h-[15px] w-2 -translate-y-px bg-green align-middle motion-safe:animate-[blink_1.1s_steps(1)_infinite]" aria-hidden="true" />
@@ -72,7 +72,7 @@ export default function Hero() {
                     <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium">
                       <span className="font-semibold text-mauve">{hero.role}</span>
                     </p>
-                    <p className="mt-1.5 font-mono text-[11.5px] text-overlay">
+                    <p className="mt-1.5 font-mono text-[11.5px] text-subtext0">
                       <span className="text-red" aria-hidden="true">
                         &#9829;
                       </span>{" "}

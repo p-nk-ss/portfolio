@@ -51,7 +51,7 @@ export default function Contact() {
                       <Icon className="size-[18px]" />
                     </span>
                     <span className="min-w-0">
-                      <span className="block text-xs text-overlay">{l.label}</span>
+                      <span className="block text-xs text-subtext0">{l.label}</span>
                       <span className="block truncate font-mono text-sm text-text">
                         {l.value}
                       </span>
