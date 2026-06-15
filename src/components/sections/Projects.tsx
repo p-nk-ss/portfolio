@@ -19,7 +19,10 @@ export default function Projects() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {projects.items.map((p) => (
-              <Card key={p.name} className="flex flex-col">
+              <Card
+                key={p.name}
+                className="flex flex-col transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-blue/30"
+              >
                 <h3 className="font-display text-lg font-semibold text-text">
                   {p.name}
                 </h3>

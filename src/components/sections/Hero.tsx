@@ -19,7 +19,7 @@ export default function Hero() {
     >
       <div className="relative">
         {/* main "About" window — full Container width, consistent with the other section windows */}
-        <div className="w-full overflow-hidden rounded-win border border-white/[0.07] bg-mantle shadow-win">
+        <div className="anim-pop w-full overflow-hidden rounded-win border border-white/[0.07] bg-mantle shadow-win">
           {/* header bar */}
           <div className="flex h-[42px] items-center gap-2.5 border-b border-white/5 bg-gradient-to-b from-white/[0.04] to-transparent px-3">
             <span className="flex gap-[7px]" aria-hidden="true">

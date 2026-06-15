@@ -30,7 +30,7 @@ export default function Dock() {
   return (
     <nav
       aria-label="Dock"
-      className="fixed bottom-2.5 left-1/2 z-40 -translate-x-1/2"
+      className="anim-fade fixed bottom-2.5 left-1/2 z-40 -translate-x-1/2"
     >
       <ul className="flex gap-2 rounded-[18px] border border-white/10 bg-crust/65 p-2 backdrop-blur-lg sm:gap-3 sm:px-3.5">
         {items.map(({ id, label, href, color, Icon, external }) => (

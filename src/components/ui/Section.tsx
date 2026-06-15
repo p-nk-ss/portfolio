@@ -1,6 +1,8 @@
 import { cn } from "@/lib/cn";
 
-/** Semantic section landmark with anchor offset for the sticky panel. */
+/** Semantic section landmark with anchor offset for the sticky panel.
+ * Content scroll-reveals on entry via CSS scroll-driven animation
+ * (no JS; disabled under prefers-reduced-motion; visible by default). */
 export default function Section({
   id,
   label,
@@ -19,7 +21,7 @@ export default function Section({
       aria-label={label}
       className={cn("scroll-mt-24 py-16 sm:py-20", className)}
     >
-      {children}
+      <div className="reveal">{children}</div>
     </section>
   );
 }
