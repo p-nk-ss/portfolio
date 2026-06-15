@@ -41,6 +41,11 @@ yarn-error.log*
 # cloudflare
 .wrangler/
 
+# playwright / screenshots (root scratch only — public/ assets still tracked)
+/.playwright-mcp/
+/test-results/
+/*.png
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
