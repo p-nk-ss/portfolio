@@ -50,12 +50,16 @@ export default function Hero() {
             <div className="grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
               <div>
                 <div className="flex items-center gap-5">
-                  {/* avatar — monogram fallback until a headshot is provided in public/ */}
-                  <div
-                    className="relative z-10 flex size-[70px] flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-mauve to-blue font-display text-3xl font-bold text-crust"
-                    aria-hidden="true"
-                  >
-                    {hero.monogram}
+                  {/* avatar — headshot extracted from the CV */}
+                  <div className="relative z-10 size-[72px] flex-none overflow-hidden rounded-full ring-1 ring-white/15">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/avatar.jpg"
+                      alt={hero.name}
+                      width={72}
+                      height={72}
+                      className="size-full object-cover"
+                    />
                   </div>
                   <div>
                     {/* ECG woven behind the name only — the medicine→engineering motif */}
