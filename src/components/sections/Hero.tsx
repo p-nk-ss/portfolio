@@ -46,9 +46,7 @@ export default function Hero() {
               <span className="ml-1 inline-block h-[15px] w-2 -translate-y-px bg-green align-middle motion-safe:animate-[blink_1.1s_steps(1)_infinite]" aria-hidden="true" />
             </p>
 
-            <div className="relative flex items-center gap-5">
-              {/* ECG heartbeat woven behind the headline — the medicine→engineering motif */}
-              <EcgTrace className="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-[110px] w-full -translate-y-1/2 opacity-[0.16]" />
+            <div className="flex items-center gap-5">
               {/* avatar — monogram fallback until a headshot is provided in public/ */}
               <div
                 className="relative z-10 flex size-[70px] flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-mauve to-blue font-display text-3xl font-bold text-crust"
@@ -56,10 +54,18 @@ export default function Hero() {
               >
                 {hero.monogram}
               </div>
-              <div className="relative z-10">
-                <h1 className="font-display text-[clamp(34px,6vw,50px)] font-bold leading-none tracking-tight">
-                  {hero.name}
-                </h1>
+              <div>
+                {/* ECG woven behind the name only — the medicine→engineering motif */}
+                <span className="relative inline-block">
+                  <EcgTrace
+                    className="pointer-events-none absolute left-1/2 top-1/2 h-[64px] w-[calc(100%+28px)] -translate-x-1/2 -translate-y-1/2"
+                    width={360}
+                    period={108}
+                  />
+                  <h1 className="relative font-display text-[clamp(34px,6vw,50px)] font-bold leading-none tracking-tight">
+                    {hero.name}
+                  </h1>
+                </span>
                 <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium">
                   <span className="font-semibold text-mauve">{hero.role}</span>
                 </p>
