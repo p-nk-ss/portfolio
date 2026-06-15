@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
-import HeartMonitor from "@/components/desktop/HeartMonitor";
+import EcgTrace from "@/components/desktop/EcgTrace";
 import { IconFile, IconMail } from "@/components/desktop/icons";
 import { hero } from "@/content/site";
 
@@ -46,20 +46,28 @@ export default function Hero() {
               <span className="ml-1 inline-block h-[15px] w-2 -translate-y-px bg-green align-middle motion-safe:animate-[blink_1.1s_steps(1)_infinite]" aria-hidden="true" />
             </p>
 
-            <div className="flex items-center gap-5">
+            <div className="relative flex items-center gap-5">
+              {/* ECG heartbeat woven behind the headline — the medicine→engineering motif */}
+              <EcgTrace className="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-[110px] w-full -translate-y-1/2 opacity-[0.16]" />
               {/* avatar — monogram fallback until a headshot is provided in public/ */}
               <div
-                className="flex size-[70px] flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-mauve to-blue font-display text-3xl font-bold text-crust"
+                className="relative z-10 flex size-[70px] flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-mauve to-blue font-display text-3xl font-bold text-crust"
                 aria-hidden="true"
               >
                 {hero.monogram}
               </div>
-              <div>
+              <div className="relative z-10">
                 <h1 className="font-display text-[clamp(34px,6vw,50px)] font-bold leading-none tracking-tight">
                   {hero.name}
                 </h1>
-                <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium text-subtext1">
+                <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium">
                   <span className="font-semibold text-mauve">{hero.role}</span>
+                </p>
+                <p className="mt-1.5 font-mono text-[11.5px] text-overlay">
+                  <span className="text-red" aria-hidden="true">
+                    &#9829;
+                  </span>{" "}
+                  {hero.monitor.bpm} bpm · {hero.monitor.uptime}
                 </p>
               </div>
             </div>
@@ -91,9 +99,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        {/* heart monitor — floats bottom-left on desktop, stacks under on mobile */}
-        <HeartMonitor className="mx-auto mt-5 w-full max-w-[280px] md:absolute md:bottom-0 md:left-0 md:mt-0 md:translate-y-1/3" />
       </div>
     </section>
   );
