@@ -2,6 +2,7 @@ import Section from "@/components/ui/Section";
 import Window from "@/components/ui/Window";
 import Container from "@/components/ui/Container";
 import { skills } from "@/content/site";
+import StaggerItem from "@/components/fx/StaggerItem";
 
 export default function Skills() {
   return (
@@ -26,13 +27,15 @@ export default function Skills() {
                   {g.name}
                 </h3>
                 <ul className="flex flex-wrap gap-2">
-                  {g.items.map((item) => (
-                    <li
+                  {g.items.map((item, i) => (
+                    <StaggerItem
                       key={item}
+                      index={i}
+                      as="li"
                       className="rounded-lg border border-white/5 bg-surface0 px-2.5 py-1 text-[13px] text-subtext1"
                     >
                       {item}
-                    </li>
+                    </StaggerItem>
                   ))}
                 </ul>
               </div>
