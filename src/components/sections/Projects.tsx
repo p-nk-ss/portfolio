@@ -1,7 +1,7 @@
 import Section from "@/components/ui/Section";
 import Window from "@/components/ui/Window";
 import Container from "@/components/ui/Container";
-import Card from "@/components/ui/Card";
+import Spotlight from "@/components/fx/Spotlight";
 import { IconExternal, IconGithub } from "@/components/desktop/icons";
 import { projects } from "@/content/site";
 
@@ -19,10 +19,7 @@ export default function Projects() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {projects.items.map((p) => (
-              <Card
-                key={p.name}
-                className="flex flex-col transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-blue/30"
-              >
+              <Spotlight key={p.name} className="flex flex-col">
                 <h3 className="font-display text-lg font-semibold text-text">
                   {p.name}
                 </h3>
@@ -64,7 +61,7 @@ export default function Projects() {
                     })}
                   </div>
                 )}
-              </Card>
+              </Spotlight>
             ))}
           </div>
         </Window>
