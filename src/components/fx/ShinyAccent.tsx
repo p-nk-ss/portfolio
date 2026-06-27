@@ -20,5 +20,5 @@ export default function ShinyAccent({
     return <span className={className}>{text}</span>;
   }
 
-  return <ShinyText text={text} className={className} speed={5} />;
+  return <ShinyText text={text} className={className} speed={5} color="#cba6f7" shineColor="#b4befe" />;
 }
