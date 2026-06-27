@@ -3,6 +3,8 @@ import Tag from "@/components/ui/Tag";
 import EcgTrace from "@/components/desktop/EcgTrace";
 import { IconFile, IconMail, IconChevronDown } from "@/components/desktop/icons";
 import { hero } from "@/content/site";
+import TaglineBlur from "@/components/fx/TaglineBlur";
+import ShinyAccent from "@/components/fx/ShinyAccent";
 
 const chipAccent = {
   green: "green",
@@ -74,7 +76,7 @@ export default function Hero() {
                       </h1>
                     </span>
                     <p className="mt-2 font-display text-[clamp(15px,2.4vw,19px)] font-medium">
-                      <span className="font-semibold text-mauve">{hero.role}</span>
+                      <ShinyAccent text={hero.role} className="font-semibold text-mauve" />
                     </p>
                     <p className="mt-1.5 font-mono text-[11.5px] text-subtext0">
                       <span className="text-red" aria-hidden="true">
@@ -85,9 +87,10 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <p className="mt-5 max-w-[46ch] font-display text-lg text-text">
-                  {hero.tagline}
-                </p>
+                <TaglineBlur
+                  text={hero.tagline}
+                  className="mt-5 max-w-[46ch] font-display text-lg text-text"
+                />
                 <p className="mt-2 max-w-[52ch] text-[15px] leading-relaxed text-subtext1">
                   {hero.subline}
                 </p>
