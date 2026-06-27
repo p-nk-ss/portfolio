@@ -30,6 +30,7 @@ export default function TaglineBlur({
       direction="bottom"
       delay={FX.blurDelayMs}
       stepDuration={FX.blurStep}
+      easing={FX.ease as [number, number, number, number]}
     />
   );
 }
