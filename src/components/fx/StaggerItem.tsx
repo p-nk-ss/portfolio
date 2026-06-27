@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import AnimatedContent from "@/components/reactbits/AnimatedContent";
 import { useMotionReady } from "./useMotionReady";
 import { FX } from "./fx-config";
@@ -18,7 +19,7 @@ export default function StaggerItem({
   index: number;
   as?: "li" | "div";
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const animate = useMotionReady();
   const Tag = as;
@@ -28,8 +29,9 @@ export default function StaggerItem({
   }
 
   return (
-    <Tag className={className}>
+    <Tag>
       <AnimatedContent
+        className={className}
         distance={12}
         direction="vertical"
         duration={0.4}
