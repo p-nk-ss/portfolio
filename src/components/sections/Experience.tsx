@@ -2,6 +2,7 @@ import Section from "@/components/ui/Section";
 import Window from "@/components/ui/Window";
 import Container from "@/components/ui/Container";
 import { experience } from "@/content/site";
+import StaggerItem from "@/components/fx/StaggerItem";
 
 export default function Experience() {
   return (
@@ -13,9 +14,11 @@ export default function Experience() {
           </h2>
 
           <ol className="mt-6 space-y-8">
-            {experience.roles.map((role) => (
-              <li
+            {experience.roles.map((role, ri) => (
+              <StaggerItem
                 key={role.company}
+                index={ri}
+                as="li"
                 className="border-l border-surface1 pl-5"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -38,7 +41,7 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
-              </li>
+              </StaggerItem>
             ))}
           </ol>
         </Window>
