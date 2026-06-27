@@ -100,9 +100,17 @@ Notes:
 
 ## Dependencies
 
-**Zero new heavy dependencies.** All chosen components are motion-based
-(`motion` is already a dependency, added when BlurText was installed) or pure
-CSS. Explicitly excluded: `gsap` / `@gsap/react` (SplitText, etc.) and all
+**Zero new heavy dependencies.** All chosen components are motion-based or pure
+CSS.
+
+About `motion`: it was always the intended animation library (named as the stack
+in CLAUDE.md / SPEC.md), but was missing from `package.json` until the BlurText
+install made the gap explicit and added it (`^12.42.0`). So this is **not a new
+dependency** — it is the existing planned one, now correctly declared. ReactBits
+imports it as `motion/react`, the same entry point the rest of the site uses; no
+`framer-motion` duplicate is introduced.
+
+Explicitly excluded: `gsap` / `@gsap/react` (SplitText, Shuffle, etc.) and all
 WebGL backgrounds (`ogl`, `three`).
 
 ## File structure
