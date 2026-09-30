@@ -6,6 +6,7 @@ import {
   IconMail,
   IconFile,
 } from "./icons";
+import { contact } from "@/content/site";
 
 type DockItem = {
   id: string;
@@ -22,7 +23,7 @@ const items: DockItem[] = [
   { id: "experience", label: "Experience", href: "#experience", color: "bg-teal text-crust", Icon: IconBriefcase },
   { id: "projects", label: "Projects", href: "#projects", color: "bg-peach text-crust", Icon: IconFolder },
   { id: "contact", label: "Contact", href: "#contact", color: "bg-pink text-crust", Icon: IconMail },
-  { id: "cv", label: "Open CV", href: "/cv.pdf", color: "bg-mauve text-crust", Icon: IconFile, external: true },
+  { id: "cv", label: "Open CV", href: contact.cvHref, color: "bg-mauve text-crust", Icon: IconFile, external: true },
 ];
 
 /** Floating bottom dock — persistent secondary nav (and the only nav on mobile). */

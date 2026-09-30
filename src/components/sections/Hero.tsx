@@ -2,7 +2,7 @@ import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import EcgTrace from "@/components/desktop/EcgTrace";
 import { IconFile, IconMail, IconChevronDown } from "@/components/desktop/icons";
-import { hero } from "@/content/site";
+import { contact, hero } from "@/content/site";
 import TaglineBlur from "@/components/fx/TaglineBlur";
 import ShinyAccent from "@/components/fx/ShinyAccent";
 
@@ -104,7 +104,7 @@ export default function Hero() {
                 </div>
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Button href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button href={contact.cvHref} target="_blank" rel="noopener noreferrer">
                     <IconFile className="size-4" />
                     Open CV.pdf
                   </Button>
